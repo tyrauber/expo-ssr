@@ -6,9 +6,7 @@ A framework for a single monorepo, monolith javascript stack with a shared codeb
 
 Less Code, Better Performance, Quicker Development.
 
-## Status
-
-[NOT FOR PRODUCTION] In development. Dependencies, project structure, etc, may change.
+## [NOT FOR PRODUCTION] Currently in development. Dependencies, project structure, etc, may change. Server Side Rendering is on the SSR branch.
 
 ## Expo Instructions
 
@@ -23,24 +21,15 @@ Less Code, Better Performance, Quicker Development.
 
 Expo Web and iOS Work.
 
-## SSR Instructions
+## Server Instructions
 
 1. Build the server
-` $ yarn dev:build`
+` $ expo build:web`
 
 2. Run the server
 `$ yarn dev:start`
 
-[1/8/21] Does not work. [See Issue #1](https://github.com/tyrauber/expo-ssr/issues/1)
-
-```
-.../node_modules/react-native-gesture-handler/index.js:1
-export { default as Swipeable } from './Swipeable';
-^^^^^^
-
-SyntaxError: Unexpected token 'export'
-```
-
+Serves the PWA.
 
 ## Stack
 

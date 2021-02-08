@@ -1,15 +1,13 @@
 {
-  "main": "node_modules/expo/AppEntry.js",
+  "main": "AppEntry.js",
   "scripts": {
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
     "eject": "expo eject",
-    "dev:build": "NODE_ENV=development webpack --config webpack.server.js --mode=development -w",
-    "dev:start": "nodemon ./dist/index.js",
-    "dev": "npm-run-all --parallel build dev:*",
-    "serve": "babel-node server"
+    "dev": "node server",
+    "server:build": "NODE_ENV=production webpack --config webpack.server.js --mode=production"
   },
   "dependencies": {
     "@babel/plugin-transform-runtime": "^7.12.15",
@@ -33,6 +31,7 @@
     "@babel/node": "^7.12.13",
     "@babel/preset-env": "7.10.4",
     "@babel/preset-react": "7.10.4",
+    "@expo/webpack-config": "^0.12.58",
     "babel-loader": "8.1.0",
     "nodemon": "^2.0.7",
     "webpack": "4.42.0",

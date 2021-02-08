@@ -2,15 +2,14 @@ const path = require('path');
 const nodeExternals = require('webpack-node-externals');
 
 module.exports = {
-  entry: './server.js',
-
-  target: 'node',
-
+  entry: {
+    render: './render.js'
+  },
   externals: [nodeExternals()],
 
   output: {
-    path: path.resolve('dist'),
-    filename: 'index.js'
+    path: path.resolve('web-build'),
+    filename: '[name].js'
   },
 
   module: {
