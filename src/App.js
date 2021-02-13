@@ -1,13 +1,20 @@
-
 import React from 'react';
 import { View, Text, Button } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
+import { NavigationContainer, Link } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+
+export const navigationRef = React.createRef();
+
+export function navigate(name, params) {
+  navigationRef.current?.navigate(name, params);
+}
+
 
 function HomeScreen({ navigation }) {
   return (
     <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
       <Text>Home Screen</Text>
+      <Link to="/details">Details Link</Link>
       <Button
         title="Go to Details"
         onPress={() => navigation.navigate('Details')}
@@ -34,16 +41,18 @@ function DetailsScreen({ navigation }) {
   );
 }
 
+
 const Stack = createStackNavigator();
 
 function App() {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
+    <NavigationContainer ref={navigationRef}>
+      <Stack.Navigator>
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Details" component={DetailsScreen} />
       </Stack.Navigator>
     </NavigationContainer>
   );
 }
+
 export default App;
