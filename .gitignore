@@ -1,6 +1,7 @@
-node_modules/**/*
-.expo/*
-.expo-shared/*
+node_modules
+.serverless
+.expo
+.expo-shared
 npm-debug.*
 .webpack/
 *.jks

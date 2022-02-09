@@ -13,11 +13,11 @@ custom:
 
 provider:
     name: aws
-    runtime: nodejs8.10
+    runtime: nodejs14.x
 
 functions:
   web:
-    handler: src/index.web
+    handler: ./index.web
     timeout: 30
     events:
       - http:

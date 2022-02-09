@@ -1,7 +1,6 @@
 const slsw = require("serverless-webpack");
 const nodeExternals = require("webpack-node-externals");
 const path = require('path');
-const appDirectory = path.resolve(__dirname, '../');
 
 module.exports = {
     entry: slsw.lib.entries,

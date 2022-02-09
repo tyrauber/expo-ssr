@@ -220,3 +220,33 @@ module.exports = {
     }
 };
 ```
+
+### 2/9/22
+
+Let's upgrade to Expo 44 SDK, `expo upgrade`.
+
+Then let's migrate this to a yarn workspaces monorepo project structure. Copy all the expo code to `./apps/expo` and all the server / serverless code to `./apps/server`.
+
+We'll need to add the metro.config.js monorepo configuration to `./apps/expo/metro.config.js`.
+
+More info on Expo Monorepos [can be found here](https://docs.expo.dev/guides/monorepos/).
+
+From root, we should now be able to run:
+
+Expo Start: `$ yarn expo start`
+
+Serverless Offline: `$ yarn server sls offline`
+
+Let's also try a deploy:
+
+`$ yarn server sls deploy`
+
+Ok. So it deploys but we have some issues.
+
+First off, aws lambdas have a url prefix, so our routing needs to accommodate that.
+
+Second off, looks like server side rendering isn't working. No matter what url we hit, we get the Home Screen.
+
+As always, remember to teardown your lambda `$ yarn server sls remove` if you don't need it.
+
+

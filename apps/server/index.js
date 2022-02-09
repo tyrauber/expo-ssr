@@ -7,7 +7,7 @@ import serverless from 'serverless-http';
 
 const app = new Koa();
 
-import App from './App';
+import App from '@expo-ssr/expo/App';
 
 
 // app.use(async (ctx) => {
